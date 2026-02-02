@@ -1,68 +1,116 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
-  background: #0d1b12;
+}
+
+body {
+  background: #0b0b0b;
   color: #fff;
 }
 
-header {
+/* HEADER */
+.header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 15px 25px;
-  background: #0f3d24;
+  background: #000;
 }
 
 .logo {
-  font-size: 22px;
-  color: #6dff6d;
+  font-size: 24px;
   font-weight: bold;
+  color: #00ff88;
 }
 
-.hero {
-  text-align: center;
-  padding: 30px 15px;
-}
-
-.hero img {
-  max-width: 260px;
-  margin-top: 15px;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.buttons button {
-  background: #1f7a4f;
-  border: none;
-  padding: 10px 14px;
-  color: white;
-  border-radius: 6px;
+.lang button {
+  background: transparent;
+  border: 1px solid #00ff88;
+  color: #00ff88;
+  margin-left: 5px;
+  padding: 5px 10px;
   cursor: pointer;
 }
 
-.buttons button:hover {
-  background: #2ecc71;
+/* HERO */
+.hero {
+  position: relative;
+  height: 90vh;
+  background: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.content {
-  max-width: 800px;
-  margin: auto;
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 600px;
+  text-align: center;
   padding: 20px;
 }
 
-.box {
-  display: none;
-  background: #123b27;
-  padding: 15px;
-  border-radius: 8px;
+.hero h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
 }
 
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #0f3d24;
-  margin-top: 40px;
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #ddd;
 }
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.call {
+  background: #00ff88;
+  color: #000;
+}
+
+.wa {
+  background: #25D366;
+  color: #fff;
+}
+
+/* FEATURES */
+.features {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #111;
+  padding: 25px;
+  border-radius: 10px;
+  transition: 0
