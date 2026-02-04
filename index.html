@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="uz">
 <head>
   <meta charset="UTF-8">
@@ -37,12 +37,11 @@
     <h1 id="title"></h1>
     <p id="subtitle"></p>
 
-   <div class="actions">
+    <div class="actions">
   <a href="tel:+77752709238" class="btn call">📞 Call</a>
   <a href="https://wa.me/77752709238" target="_blank" class="btn wa">💬 WhatsApp</a>
   <a href="https://www.instagram.com/beco_team?igsh=NjVxZzNqbmNjazll" target="_blank" class="btn ig">📸 Instagram</a>
-  <a href="#" onclick="openFuelVideo()" class="btn video">🔥 Fuel Tabs</a>
-  <a href="#" onclick="openFuelVideo()" class="btn video">🎥 Fuel Tabs Video</a>
+  <button class="btn fuel-btn" onclick="openFuel()">🔥 Fuel Tabs</button>
 </div>
     </div>
   </div>
@@ -86,10 +85,15 @@
   © 2026 — <b>Bahrom Furkatov</b>, Основатель
 </footer>
 
-<footer>
-  © 2026 — <b>Bahrom Furkatov</b>, Основатель
-</footer>
-
+<script src="script.js"></script>
+</body>
+</html>
+<div id="fuelModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeFuel()">&times;</span>
+    <img src="photo_2025-12-31_17-16-05.jpg" alt="Fuel Tabs" class="fuel-img">
+  </div>
+</div>                                                                                                                                                                                                                                                                            
 <!-- VIDEO MODAL -->
 <div id="fuelVideoModal" class="modal">
   <div class="modal-content">
