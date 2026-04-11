@@ -1,117 +1,211 @@
-!DOCTYPE html>
-<html lang="uz">
+<!DOCTYPE html><html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <title>B-ECO Fuel Tabs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO -->
-  <meta name="description" content="B-ECO Fuel Tabs – yoqilg‘ini tejash, dvigatelni himoyalash va ekologiya uchun innovatsion yechim">
-  <meta name="keywords" content="B-ECO, Fuel Tabs, yoqilg'i tejash, eco fuel">
-
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="header">
-  <div class="logo-box">
-    <img src="beco.png" alt="B-ECO Logo" class="logo-img">
-    <span class="logo-text">B-ECO</span>
-  </div>
-
-  <nav class="nav">
-    <a href="#home" id="navHome">Home</a>
-    <a href="#product" id="navProduct">Mahsulot</a>
-    <a href="#faq" id="navFaq">Savollar</a>
-  </nav>
-
-  <div class="lang">
-    <button onclick="setLang('uz')">UZ</button>
-    <button onclick="setLang('kz')">KZ</button>
-    <button onclick="setLang('ru')">RU</button>
-  </div>
-</header>
-<section class="hero" id="home">
-  <div class="overlay"></div>
-  <div class="hero-content">
-    <h1 id="title"></h1>
-    <p id="subtitle"></p>
-
-   <div class="actions">
-  <a href="tel:+77752709238" class="btn call">📞 Call</a>
-  <a href="https://wa.me/77752709238" target="_blank" class="btn wa">💬 WhatsApp</a>
-  <a href="https://www.instagram.com/beco_team?igsh=NjVxZzNqbmNjazll" target="_blank" class="btn ig">📸 Instagram</a>
-  <a href="#" onclick="openFuelVideo()" class="btn video">🔥 Fuel Tabs</a>
-  <a href="#" onclick="openFuelVideo()" class="btn video">🎥 Fuel Tabs Video</a>
-</div>
-    </div>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <h2 id="aboutTitle"></h2>
-  <p id="aboutText"></p>
-
-  <div class="cards">
-    <div class="card" id="card1"></div>
-    <div class="card" id="card2"></div>
-    <div class="card" id="card3"></div>
-  </div>
-</section>
-
-<section class="faq" id="faq">
-  <h2 id="faqTitle"></h2>
-
-  <div class="faq-item">
-    <button onclick="toggleFaq(1)" id="q1"></button>
-    <div class="faq-body" id="a1"></div>
-  </div>
-
-  <div class="faq-item">
-    <button onclick="toggleFaq(2)" id="q2"></button>
-    <div class="faq-body" id="a2"></div>
-  </div>
-
-  <div class="faq-item">
-    <button onclick="toggleFaq(3)" id="q3"></button>
-    <div class="faq-body" id="a3"></div>
-  </div>
-
-  <div class="faq-item">
-    <button onclick="toggleFaq(4)" id="q4"></button>
-    <div class="faq-body" id="a4"></div>
-  </div>
-</section>
-<footer>
-  © 2026 — <b>Bahrom Furkatov</b>, Основатель
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
-<div id="fuelModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeFuel()">&times;</span>
-    <img src="photo_2025-12-31_17-16-05.jpg" alt="Fuel Tabs" class="fuel-img">
-  </div>
-</div>                                                                                                                                                                                                                                                                            
-
-<!-- VIDEO MODAL -->
-<div id="fuelVideoModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeFuelVideo()">&times;</span>
-    <video controls class="fuel-video">
-      <source src="video_2026-02-04_18-26-52.mp4" type="video/mp4">
-    </video>
-  </div>
-</div>
-<script>
-function openFuelVideo() {
-  document.getElementById("fuelVideoModal").style.display = "block";
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fuel Tabs Shop</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"><style>
+:root{
+--green:#16a34a;
+--black:#000;
+--white:#fff;
+--gray:#f3f4f6;
 }
-function closeFuelVideo() {
-  document.getElementById("fuelVideoModal").style.display = "none";
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#fff;color:#000;overflow-x:hidden;}
+
+/* INTRO APPLE STYLE */
+.intro{
+position:fixed;
+inset:0;
+background:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+overflow:hidden;
 }
-</script>
-</body>
+
+.logo{
+font-size:40px;
+font-weight:700;
+color:var(--green);
+animation:zoom 1.5s ease;
+}
+
+.float-img{
+position:absolute;
+width:80px;
+animation:float 2s ease forwards;
+opacity:0;
+}
+
+.top{top:-100px;left:50%;transform:translateX(-50%);} 
+.bottom{bottom:-100px;left:50%;transform:translateX(-50%);} 
+.left{left:-100px;top:50%;transform:translateY(-50%);} 
+.right{right:-100px;top:50%;transform:translateY(-50%);} 
+
+@keyframes float{
+to{opacity:1;transform:translate(0,0);}
+}
+
+@keyframes zoom{
+0%{opacity:0;transform:scale(0.3)}
+100%{opacity:1;transform:scale(1)}
+}
+
+/* HEADER */
+.header{text-align:center;padding:20px;}
+.lang{display:flex;justify-content:center;gap:10px;margin-bottom:15px;}
+.lang button{padding:8px 16px;border:none;border-radius:20px;background:var(--green);color:#fff;cursor:pointer;}
+
+.section{max-width:500px;margin:auto;padding:20px;}
+
+.card{
+background:var(--gray);
+padding:20px;
+border-radius:20px;
+margin-bottom:20px;
+box-shadow:0 10px 20px rgba(0,0,0,0.05);
+}
+
+img,video{width:100%;border-radius:15px;margin-top:10px;}
+
+.btn{display:block;padding:14px;margin-top:10px;border-radius:12px;text-align:center;text-decoration:none;font-weight:600;}
+.whatsapp{background:#22c55e;color:#fff;}
+
+/* FLOAT BUTTONS */
+.floating{
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+justify-content:center;
+max-width:90%;
+}
+
+.floating a{
+padding:10px 12px;
+border-radius:20px;
+background:var(--green);
+color:#fff;
+font-size:11px;
+text-decoration:none;
+}
+
+.fade{opacity:0;transform:translateY(40px);transition:0.8s;}
+.fade.show{opacity:1;transform:translateY(0);}
+
+footer{text-align:center;padding:30px;font-size:14px;}
+</style></head><body><!-- INTRO --><div class="intro" id="intro">
+<img src="fuel.jpg" class="float-img top">
+<img src="fuel.jpg" class="float-img bottom">
+<img src="fuel.jpg" class="float-img left">
+<img src="fuel.jpg" class="float-img right">
+<div class="logo">B-ECO</div>
+</div><div class="header">
+<div class="lang">
+<button onclick="setLang('uz')">UZ</button>
+<button onclick="setLang('kz')">KZ</button>
+<button onclick="setLang('ru')">RU</button>
+</div>
+<h1 id="title"></h1>
+<p id="subtitle"></p>
+</div><div class="section fade"><div class="card">
+<img src="fuel.jpg">
+<h2 id="product"></h2>
+<p id="desc"></p>
+<h3>11000 ₸</h3>
+<a class="btn whatsapp" href="https://wa.me/77752709238" target="_blank" id="buy"></a>
+</div><div class="card">
+<h2 id="about"></h2>
+<p id="aboutText"></p>
+</div><div class="card">
+<h2 id="how"></h2>
+<p id="howText"></p>
+</div><div class="card">
+<h2 id="result"></h2>
+<video controls><source src="video.mp4"></video>
+<img src="result.jpg">
+</div></div><!-- FLOAT BUTTONS --><div class="floating">
+<a href="https://wa.me/77752709238">WhatsApp</a>
+<a href="#">TikTok</a>
+<a href="#">Instagram</a>
+<a href="tel:+77782709238">Call</a>
+<a href="#">B-ECO</a>
+<a href="#">Map</a>
+</div><footer>
+<p id="footer"></p>
+</footer><script>
+setTimeout(()=>{document.getElementById('intro').style.display='none';},2500);
+
+const data={
+uz:{
+title:"Fuel Tabs Shop",
+subtitle:"Yoqilg'ini tejang",
+product:"Fuel Tabs",
+desc:"15% gacha yoqilg'i tejaydi, quvvatni oshiradi",
+buy:"Buyurtma berish",
+about:"Mahsulot haqida",
+aboutText:`B-ECO Fuel Tabs yoqilg'i sarfini kamaytiradi, dvigatelni tozalaydi va quvvatni oshiradi. 15% gacha tejash isbotlangan.`,
+how:"Qanday ishlaydi",
+howText:`Har bir tabletka yoqilg'ining yonishini yaxshilaydi va dvigatelni himoya qiladi.`,
+result:"Natijalar",
+footer:"Bahrom Furkatov sayt asoschisi"
+},
+kz:{
+title:"Fuel Tabs Shop",
+subtitle:"Жанармай үнемдеу",
+product:"Fuel Tabs",
+desc:"15% дейін үнем",
+buy:"Тапсырыс беру",
+about:"Өнім туралы",
+aboutText:"Fuel Tabs жанармайды үнемдейді",
+how:"Қалай жұмыс істейді",
+howText:"Жануды жақсартады",
+result:"Нәтижелер",
+footer:"Bahrom Furkatov сайт негізін қалаушы"
+},
+ru:{
+title:"Fuel Tabs Shop",
+subtitle:"Экономия топлива",
+product:"Fuel Tabs",
+desc:"До 15% экономии",
+buy:"Заказать",
+about:"О продукте",
+aboutText:"Fuel Tabs снижает расход топлива",
+how:"Как работает",
+howText:"Улучшает сгорание",
+result:"Результаты",
+footer:"Основатель Bahrom Furkatov"
+}
+};
+
+function setLang(l){
+document.getElementById('title').innerText=data[l].title;
+document.getElementById('subtitle').innerText=data[l].subtitle;
+document.getElementById('product').innerText=data[l].product;
+document.getElementById('desc').innerText=data[l].desc;
+document.getElementById('buy').innerText=data[l].buy;
+document.getElementById('about').innerText=data[l].about;
+document.getElementById('aboutText').innerText=data[l].aboutText;
+document.getElementById('how').innerText=data[l].how;
+document.getElementById('howText').innerText=data[l].howText;
+document.getElementById('result').innerText=data[l].result;
+document.getElementById('footer').innerText=data[l].footer;
+}
+
+setLang('uz');
+
+const fades=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+fades.forEach(el=>{
+if(el.getBoundingClientRect().top<window.innerHeight-50){
+el.classList.add('show');
+}
+});
+});
+</script></body>
 </html>
